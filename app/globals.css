@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Design tokens — "Warm Industrial / Cozy Neo-Brutalism"
+   Light mode default, Dark mode via .dark class
+--------------------------------------------------------------------------- */
+:root {
+  --color-beige: #f5efe6;
+  --color-sand: #e8dec8;
+  --color-ink: #111111;
+  --color-crimson: #d9381e;
+  --color-orange: #e86f2c;
+  --color-espresso: #3e2723;
+
+  /* Contribution heat scale */
+  --color-heat-0: #f5efe6;
+  --color-heat-1: #f4c19c;
+  --color-heat-2: #e86f2c;
+  --color-heat-3: #d9381e;
+  --color-heat-4: #8f1d0c;
+
+  --color-shadow-brutal: #111111;
+}
+
+.dark {
+  /* Warm industrial deep charcoal & dark espresso tones */
+  --color-beige: #181514;
+  --color-sand: #24201e;
+  --color-ink: #f0ebe1;
+  --color-crimson: #e6452b;
+  --color-orange: #f28241;
+  --color-espresso: #141110;
+
+  /* Contribution heat scale (dark mode) */
+  --color-heat-0: #24201e;
+  --color-heat-1: #6a341d;
+  --color-heat-2: #b04e22;
+  --color-heat-3: #e6452b;
+  --color-heat-4: #ff6e52;
+
+  --color-shadow-brutal: #0a0908;
+}
+
+@theme {
+  --color-beige: var(--color-beige);
+  --color-sand: var(--color-sand);
+  --color-ink: var(--color-ink);
+  --color-crimson: var(--color-crimson);
+  --color-orange: var(--color-orange);
+  --color-espresso: var(--color-espresso);
+
+  --color-heat-0: var(--color-heat-0);
+  --color-heat-1: var(--color-heat-1);
+  --color-heat-2: var(--color-heat-2);
+  --color-heat-3: var(--color-heat-3);
+  --color-heat-4: var(--color-heat-4);
+
+  --shadow-brutal-sm: 2px 2px 0px var(--color-shadow-brutal);
+  --shadow-brutal: 4px 4px 0px var(--color-shadow-brutal);
+  --shadow-brutal-lg: 6px 6px 0px var(--color-shadow-brutal);
+  --shadow-brutal-espresso: 4px 4px 0px var(--color-shadow-brutal);
+  --shadow-none-brutal: 0px 0px 0px var(--color-shadow-brutal);
+
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --tracking-tightest: -0.03em;
+
+  --animate-pulse-dot: pulse-dot 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes pulse-dot {
+    0% {
+      transform: scale(1);
+      opacity: 0.75;
+    }
+    75%,
+    100% {
+      transform: scale(2.4);
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-beige font-sans text-ink antialiased;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      font-size: 1.0625rem;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-bold;
+    letter-spacing: var(--tracking-tightest);
+    line-height: 1.05;
+  }
+
+  ::selection {
+    background: var(--color-crimson);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-crimson);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Film-grain texture overlay (pure CSS/SVG — zero network requests).
+--------------------------------------------------------------------------- */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.24 0 0 0 0 0.15 0 0 0 0 0.13 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Architectural blueprint grid & subtle cross dots */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, color-mix(in srgb, var(--color-ink) 7%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-ink) 7%, transparent) 1px, transparent 1px);
+}
+
+/* ---------------------------------------------------------------------------
+   Reusable neo-brutalist primitives
+--------------------------------------------------------------------------- */
+@layer components {
+  .brutal-card {
+    @apply border-2 border-ink bg-sand shadow-brutal;
+  }
+
+  /* Button that "presses" into its hard shadow on hover. */
+  .brutal-btn {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-ink px-5 py-3 font-display text-sm font-bold uppercase tracking-wide shadow-brutal transition-[transform,box-shadow] duration-150 ease-out select-none;
+  }
+  .brutal-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--color-shadow-brutal);
+  }
+  .brutal-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px var(--color-shadow-brutal);
+  }
+
+  .btn-crimson {
+    @apply bg-crimson text-white;
+  }
+  .btn-beige {
+    @apply bg-beige text-ink;
+  }
+  .btn-orange {
+    @apply bg-orange text-ink;
+  }
+  .btn-ink {
+    @apply bg-ink text-beige;
+  }
+
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.2em] text-ink;
+  }
+
+  .section-title {
+    @apply font-display text-4xl font-extrabold uppercase sm:text-5xl lg:text-6xl;
+    letter-spacing: var(--tracking-tightest);
+  }
+
+  .tag {
+    @apply inline-flex items-center border-2 border-orange bg-orange/10 px-2 py-0.5 font-mono text-xs font-medium text-ink;
+  }
+
+  .input-brutal {
+    @apply w-full border-2 border-ink bg-beige px-4 py-3 font-sans text-base text-ink placeholder:text-ink/50 shadow-brutal-sm transition-[box-shadow,transform] duration-150 outline-none;
+  }
+  .input-brutal:focus {
+    @apply shadow-brutal;
+    transform: translate(-2px, -2px);
+    outline: none;
+    border-color: var(--color-crimson);
+  }
+}
