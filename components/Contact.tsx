@@ -62,9 +62,21 @@ export function Contact() {
     const data = Object.fromEntries(new FormData(form).entries());
 
     if (!WEB3FORMS_KEY) {
-      // No form backend configured: fall back to the user's mail client.
+      // Direct email fallback: opens Gmail / default mail client with pre-filled message
+      const subject = encodeURIComponent(`[Portfolio] ${data.subject || "Message"}`);
       const body = encodeURIComponent(`${data.message}\n\n— ${data.name} (${data.email})`);
-      window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(String(data.subject))}&body=${body}`;
+      
+      // Open web Gmail in a new tab for seamless web mailing
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${profile.email}&su=${subject}&body=${body}`;
+      const mailtoUrl = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+      
+      const opened = window.open(gmailUrl, "_blank");
+      if (!opened) {
+        window.location.href = mailtoUrl;
+      }
+      
+      setStatus("success");
+      form.reset();
       return;
     }
 
