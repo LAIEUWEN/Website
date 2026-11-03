@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // @ts-expect-error Next.js config option
+  agentRules: false,
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
