@@ -25,7 +25,9 @@ export function Footer() {
         </nav>
         <a
           href="#top"
-          className="inline-flex items-center gap-2 self-start border-2 border-ink bg-beige px-4 py-2 font-display text-sm font-bold uppercase tracking-wide text-ink shadow-[4px_4px_0_#E86F2C] transition-[transform,box-shadow] duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#E86F2C] md:self-auto"
+          data-back-to-top
+          aria-label="Back to top"
+          className="inline-flex items-center gap-2 self-start border-2 border-ink bg-beige px-4 py-2 font-display text-sm font-bold uppercase tracking-wide text-ink shadow-[4px_4px_0_#E86F2C] transition-[transform,box-shadow] duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_#E86F2C] md:self-auto cursor-pointer select-none"
         >
           Back to Top <ArrowUp size={16} aria-hidden="true" />
         </a>

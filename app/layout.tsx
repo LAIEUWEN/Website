@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { profile, hero } from "@/data/portfolioData";
 import { MotionProvider } from "@/components/MotionProvider";
 import { BackgroundEffect } from "@/components/BackgroundEffect";
+import { TopCelebration } from "@/components/TopCelebration";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -87,7 +88,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         <BackgroundEffect />
         <div className="relative z-10">
-          <MotionProvider>{children}</MotionProvider>
+          <MotionProvider>
+            {children}
+            <TopCelebration />
+          </MotionProvider>
         </div>
         <Analytics />
         <SpeedInsights />
