@@ -43,12 +43,12 @@ export function SushiCharcadet() {
           animate={
             isJumping
               ? { y: [0, -28, 0], scale: [1, 1.05, 1] }
-              : { y: [0, -2, 0] }
+              : { y: 0 }
           }
           transition={
             isJumping
               ? { duration: 0.48, ease: "easeOut" }
-              : { duration: 2.2, repeat: Infinity, ease: "easeInOut" }
+              : { duration: 0.2 }
           }
           title="Click Charcadet!"
         >
@@ -67,9 +67,9 @@ export function SushiCharcadet() {
             )}
           </AnimatePresence>
 
-          {/* Charcadet Sprite  */}
+          {/* Charcadet Animated Sprite (57x129, pixel-sharp native GIF) */}
           <img
-            src="/sushi/charcadet_cropped.png"
+            src="/sushi/charcadet_cropped.gif"
             alt="Charcadet"
             width={57}
             height={129}
