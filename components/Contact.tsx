@@ -110,8 +110,26 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="border-b-2 border-ink">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
+    <section id="contact" className="relative overflow-hidden border-b-2 border-ink">
+      {/* Radiant ambient section highlights */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-28 -left-20 h-[36rem] w-[36rem] rounded-full opacity-44 blur-[115px] dark:opacity-50"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(225, 65, 35, 0.85) 0%, rgba(245, 140, 50, 0.45) 45%, transparent 75%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-24 -right-20 h-[34rem] w-[34rem] rounded-full opacity-40 blur-[110px] dark:opacity-45"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(255, 195, 60, 0.85) 0%, rgba(232, 111, 44, 0.38) 45%, transparent 70%)",
+        }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
         <div className="grid overflow-hidden border-[3px] border-ink shadow-brutal-lg lg:grid-cols-2">
           {/* Left: direct action */}
           <div className="relative flex flex-col justify-between gap-10 border-b-[3px] border-ink bg-crimson p-8 text-white md:p-12 lg:border-r-[3px] lg:border-b-0">

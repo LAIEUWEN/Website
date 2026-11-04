@@ -47,3 +47,40 @@ export function WhatsappIcon({ size = 20, ...props }: IconProps) {
     </svg>
   );
 }
+
+export function LanternIcon({ size = 22, ...props }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      {/* Top hanger ring */}
+      <circle cx="12" cy="3" r="1.5" />
+      {/* Upper bracket */}
+      <path d="M10 5h4" />
+      {/* Pagoda cap */}
+      <path d="M6 7.5L12 5.5l6 2v1H6v-1Z" fill="currentColor" fillOpacity="0.25" />
+      {/* Cage body */}
+      <path d="M7 8.5L8 18h8l1-9.5H7Z" />
+      {/* Center divider line */}
+      <line x1="12" y1="8.5" x2="12" y2="18" strokeDasharray="1.5 1.5" />
+      {/* Burning crimson flame */}
+      <path
+        d="M12 11c-.8 1-1.2 2-.3 3s2.1.2 1.8-1.5c-.3-1-1.5-1.5-1.5-1.5Z"
+        fill="#D9381E"
+        stroke="#D9381E"
+        strokeWidth="1.2"
+      />
+      {/* Base */}
+      <path d="M8 18h8v2.5H8V18Z" fill="currentColor" fillOpacity="0.3" />
+    </svg>
+  );
+}

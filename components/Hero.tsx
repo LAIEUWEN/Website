@@ -4,6 +4,7 @@ import { m } from "framer-motion";
 import { ArrowDownRight, Download, MapPin } from "lucide-react";
 import { about, hero, profile } from "@/data/portfolioData";
 import { SectionHeader } from "./SectionHeader";
+import { LanternCanvas } from "./LanternCanvas";
 
 /** Renders "*word*" segments in crimson. */
 function Highlighted({ text }: { text: string }) {
@@ -29,6 +30,93 @@ export function Hero() {
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.07] [background-image:linear-gradient(#111_1px,transparent_1px),linear-gradient(90deg,#111_1px,transparent_1px)] [background-size:48px_48px]"
+      />
+
+      {/* =========================================================================
+          BACKGROUND DEPTH LANTERNS (Distant silhouettes, soft glow, high atmosphere)
+         ========================================================================= */}
+      {/* Left depth: Brass Globe lantern receding in the haze */}
+      <LanternCanvas
+        style="globe"
+        cordLength={105}
+        scale={1.8}
+        opacity={0.4}
+        lightIntensity={0.6}
+        chainStyle="thin"
+        swayDuration={5.8}
+        swayDelay={-2.8}
+        glowTone="warm"
+        className="hidden lg:flex absolute top-0 left-28 xl:left-44 z-10"
+      />
+      {/* Right depth: Tall Gothic lantern deep in courtyard */}
+      <LanternCanvas
+        style="tall"
+        cordLength={130}
+        scale={2.0}
+        opacity={0.42}
+        lightIntensity={0.62}
+        chainStyle="thin"
+        swayDuration={6.1}
+        swayDelay={-1.3}
+        glowTone="golden"
+        className="hidden lg:flex absolute top-0 right-16 lg:right-24 xl:right-48 z-10"
+      />
+
+      {/* =========================================================================
+          FOREGROUND SIDE LANTERNS (Varied scales, staggered drops & mixed colors)
+         ========================================================================= */}
+      {/* Left Margin - Primary: Imposing low-hanging Gothic Iron lantern (Golden Glow) */}
+      <LanternCanvas
+        style="tall"
+        cordLength={145}
+        scale={3.8}
+        chainStyle="heavy"
+        swayAngle={1.8}
+        swayDuration={5.4}
+        swayDelay={0}
+        glowTone="golden"
+        lightRadius={1.2}
+        className="hidden md:flex absolute top-0 left-2 md:left-4 lg:left-7 xl:left-12 z-20"
+      />
+      {/* Left Margin - Secondary: High-perched Pagoda Red lantern (Crimson Glow) */}
+      <LanternCanvas
+        style="pagoda"
+        cordLength={36}
+        scale={2.6}
+        chainStyle="thin"
+        swayAngle={3.2}
+        swayDuration={4.0}
+        swayDelay={-1.7}
+        glowTone="crimson"
+        lightRadius={0.95}
+        className="hidden lg:flex absolute top-0 left-20 xl:left-28 z-20"
+      />
+
+      {/* Right Margin - Primary: Mid-drop Pagoda Red lantern (Crimson Glow) */}
+      <LanternCanvas
+        style="pagoda"
+        cordLength={75}
+        scale={3.4}
+        chainStyle="iron"
+        swayAngle={2.4}
+        swayDuration={4.6}
+        swayDelay={-2.2}
+        glowTone="crimson"
+        lightRadius={1.1}
+        className="hidden md:flex absolute top-0 right-2 md:right-4 lg:right-7 xl:left-auto xl:right-12 z-20"
+      />
+      {/* Right Margin - Secondary: Slender Gothic Iron lantern dropped lower (Golden Glow) */}
+      <LanternCanvas
+        style="tall"
+        cordLength={160}
+        scale={2.8}
+        chainStyle="iron"
+        swayAngle={2.6}
+        swayDuration={5.0}
+        swayDelay={-0.8}
+        glowTone="golden"
+        lightRadius={1.0}
+        className="hidden xl:flex absolute top-0 right-28 z-20"
       />
       <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 py-20 text-center sm:px-6 md:py-28 lg:px-8 lg:py-36">
         {/* Status badges */}
@@ -96,8 +184,26 @@ export function Hero() {
 
 export function About() {
   return (
-    <section id="about" className="border-b-2 border-ink">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
+    <section id="about" className="relative overflow-hidden border-b-2 border-ink">
+      {/* Radiant ambient section highlights */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-28 -right-16 h-[34rem] w-[34rem] rounded-full opacity-42 blur-[110px] dark:opacity-48"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(245, 140, 50, 0.85) 0%, rgba(217, 56, 30, 0.4) 40%, rgba(232, 111, 44, 0.15) 60%, transparent 75%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-24 -left-16 h-[32rem] w-[32rem] rounded-full opacity-38 blur-[105px] dark:opacity-44"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(255, 195, 60, 0.8) 0%, rgba(232, 111, 44, 0.35) 45%, transparent 70%)",
+        }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
         <SectionHeader index="01" eyebrow="About" title="The Person Behind The Commits" />
 
         <div className="grid gap-6 md:grid-cols-6">

@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, m } from "framer-motion";
-import { Sparkles, X } from "lucide-react";
+import { X } from "lucide-react";
 import confetti from "canvas-confetti";
+import { LanternIcon } from "./icons";
 
 export function TopCelebration() {
   const [isOpen, setIsOpen] = useState(false);
@@ -138,9 +139,9 @@ export function TopCelebration() {
               <X size={16} strokeWidth={2.5} />
             </button>
 
-            {/* Sparkle icon */}
+            {/* Lantern celebration icon */}
             <div className="mx-auto mb-3 grid h-12 w-12 place-items-center border-2 border-ink bg-orange text-ink shadow-brutal-sm">
-              <Sparkles size={22} />
+              <LanternIcon size={26} />
             </div>
 
             {/* Requested message */}

@@ -162,8 +162,26 @@ export async function GithubActivity() {
   ];
 
   return (
-    <section id="github" className="border-b-2 border-ink bg-sand/40">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
+    <section id="github" className="relative overflow-hidden border-b-2 border-ink bg-sand/40">
+      {/* Radiant ambient section highlights */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-28 -left-20 h-[34rem] w-[34rem] rounded-full opacity-42 blur-[110px] dark:opacity-48"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(255, 195, 60, 0.85) 0%, rgba(232, 111, 44, 0.4) 45%, transparent 70%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute top-1/3 -right-20 h-[32rem] w-[32rem] rounded-full opacity-38 blur-[110px] dark:opacity-44"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(245, 140, 50, 0.8) 0%, rgba(217, 56, 30, 0.35) 45%, transparent 70%)",
+        }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
         <SectionHeader
           index="03"
           eyebrow={`github.com/${data.username}`}

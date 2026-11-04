@@ -90,6 +90,52 @@
       transform: translateX(-50%);
     }
   }
+
+  @keyframes lantern-swing {
+    0%, 100% {
+      transform: rotate(calc(-1 * var(--sway-angle, 2.5deg)));
+    }
+    50% {
+      transform: rotate(var(--sway-angle, 2.5deg));
+    }
+  }
+
+  @keyframes lantern-flicker {
+    0%, 100% {
+      opacity: 0.85;
+      transform: scale(1);
+    }
+    30% {
+      opacity: 0.98;
+      transform: scale(1.06);
+    }
+    60% {
+      opacity: 0.76;
+      transform: scale(0.96);
+    }
+    85% {
+      opacity: 0.92;
+      transform: scale(1.03);
+    }
+  }
+}
+
+.lantern-sway {
+  transform-origin: top center;
+  animation: lantern-swing 4.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.lantern-glow {
+  animation: lantern-flicker 2.8s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lantern-sway,
+  .lantern-glow {
+    animation: none !important;
+  }
 }
 
 @layer base {

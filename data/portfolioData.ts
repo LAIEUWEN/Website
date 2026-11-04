@@ -65,7 +65,7 @@ export const profile = {
 
 export const hero = {
   /** Words wrapped in *asterisks* are highlighted in crimson. */
-  headline: "Software Engineer who loves building *applications & AI*.",
+  headline: "Software Engineer who loves building *applications & AI.*",
   subheadline:
     "I design and ship end-to-end software — from computer vision pipelines and backend services to interfaces people actually enjoy using.",
 };
