@@ -16,5 +16,8 @@ Hard shadows: `shadow-brutal-sm` (2px), `shadow-brutal` (4px), `shadow-brutal-lg
 `.btn-orange`, `.btn-ink`), `.brutal-card`, `.tag`, `.input-brutal`.
 
 ## Credits & Assets
-Thanks to karsiori for providing cool free pixel art <3
+Thanks to the Karsiori and RetroNC for providing cool pixel art <3
 - **Pixel Art Lanterns**: [Free Pixel Art Lantern Pack](https://karsiori.itch.io/free-pixel-art-lantern-pack) by [Karsiori](https://karsiori.itch.io/) on itch.io.
+- **Charcadet Sprite**: [Charcadet Sprite](https://www.deviantart.com/retronc/art/Charcadet-Sprite-977428065) by [RetroNC](https://www.deviantart.com/retronc) on DeviantArt.
+- **Pixel Art Sushi Set**: [Free Pixel Art Sushi Pack](https://karsiori.itch.io/free-pixel-art-sushi-pack) by [Karsiori](https://karsiori.itch.io/) on itch.io.
+

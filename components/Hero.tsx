@@ -5,6 +5,7 @@ import { ArrowDownRight, Download, MapPin } from "lucide-react";
 import { about, hero, profile } from "@/data/portfolioData";
 import { SectionHeader } from "./SectionHeader";
 import { LanternCanvas } from "./LanternCanvas";
+import { SushiCharcadet } from "./SushiCharcadet";
 
 /** Renders "*word*" segments in crimson. */
 function Highlighted({ text }: { text: string }) {
@@ -302,6 +303,9 @@ export function About() {
                 );
               })}
             </ul>
+
+            {/* Pixel Art Charcadet Sushi Scene */}
+            <SushiCharcadet />
           </m.article>
         </div>
       </div>
