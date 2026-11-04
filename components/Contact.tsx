@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, m } from "framer-motion";
-import { Check, Copy, Loader2, Mail, Send } from "lucide-react";
+import { Check, Copy, Loader2, Send } from "lucide-react";
 import { contact, profile } from "@/data/portfolioData";
-import { GithubIcon, LinkedinIcon } from "./icons";
+import { GithubIcon, LinkedinIcon, WhatsappIcon } from "./icons";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -106,7 +106,7 @@ export function Contact() {
   const socials = [
     { label: "GitHub", href: profile.socials.github, icon: <GithubIcon size={22} /> },
     { label: "LinkedIn", href: profile.socials.linkedin, icon: <LinkedinIcon size={22} /> },
-    { label: "Email", href: `mailto:${profile.email}`, icon: <Mail size={22} aria-hidden="true" /> },
+    { label: "WhatsApp", href: profile.socials.whatsapp, icon: <WhatsappIcon size={22} /> },
   ];
 
   return (

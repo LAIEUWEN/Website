@@ -55,6 +55,7 @@ export const profile = {
   socials: {
     github: "https://github.com/LAIEUWEN", 
     linkedin: "https://www.linkedin.com/in/lai-eu-wen-87020a2a9/", 
+    whatsapp: "https://wa.me/60128222681?text=Hi%20Lai%20Eu%20Wen%2C%20it%27s%20a%20pleasure%20to%20meet%20you!",
   },
 };
 
