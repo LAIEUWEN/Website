@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { profile, hero } from "@/data/portfolioData";
 import { MotionProvider } from "@/components/MotionProvider";
 import { BackgroundEffect } from "@/components/BackgroundEffect";
+import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import { TopCelebration } from "@/components/TopCelebration";
 import "./globals.css";
 
@@ -89,6 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <BackgroundEffect />
         <div className="relative z-10">
           <MotionProvider>
+            <ScrollProgressBar />
             {children}
             <TopCelebration />
           </MotionProvider>

@@ -68,6 +68,7 @@
   --tracking-tightest: -0.03em;
 
   --animate-pulse-dot: pulse-dot 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-marquee: marquee 30s linear infinite;
 
   @keyframes pulse-dot {
     0% {
@@ -78,6 +79,15 @@
     100% {
       transform: scale(2.4);
       opacity: 0;
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
     }
   }
 }

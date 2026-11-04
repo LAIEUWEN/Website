@@ -9,7 +9,7 @@ export function Footer() {
         <div>
           <p className="font-display text-2xl font-bold uppercase tracking-[-0.03em]">{profile.name}</p>
           <p className="mt-1 font-mono text-xs opacity-80">
-            © {year} {profile.name}. Built with Next.js, Tailwind & too much coffee.
+            © {year} {profile.name}. Built with Next.js, Tailwind & too much caffine.
           </p>
         </div>
         <nav aria-label="Footer">

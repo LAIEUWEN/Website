@@ -165,7 +165,7 @@ export function Contact() {
                 <label htmlFor="name" className="mb-2 block font-mono text-xs font-medium uppercase tracking-widest">
                   Name
                 </label>
-                <input id="name" name="name" required autoComplete="name" className="input-brutal" placeholder="Ada Lovelace" />
+                <input id="name" name="name" required autoComplete="name" className="input-brutal" placeholder="Heisenberg" />
               </div>
               <div>
                 <label htmlFor="email" className="mb-2 block font-mono text-xs font-medium uppercase tracking-widest">
@@ -178,7 +178,7 @@ export function Contact() {
                   required
                   autoComplete="email"
                   className="input-brutal"
-                  placeholder="ada@example.com"
+                  placeholder="ILoveMath@example.com"
                 />
               </div>
             </div>
@@ -186,7 +186,7 @@ export function Contact() {
               <label htmlFor="subject" className="mb-2 block font-mono text-xs font-medium uppercase tracking-widest">
                 Subject
               </label>
-              <input id="subject" name="subject" required className="input-brutal" placeholder="Let's work together" />
+              <input id="subject" name="subject" required className="input-brutal" placeholder="Let's start cooking" />
             </div>
             <div>
               <label htmlFor="message" className="mb-2 block font-mono text-xs font-medium uppercase tracking-widest">

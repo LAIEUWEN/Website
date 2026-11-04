@@ -1,3 +1,6 @@
+"use client";
+
+import { m } from "framer-motion";
 import { ArrowDownRight, Download, MapPin } from "lucide-react";
 import { about, hero, profile } from "@/data/portfolioData";
 import { SectionHeader } from "./SectionHeader";
@@ -28,7 +31,13 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 opacity-[0.07] [background-image:linear-gradient(#111_1px,transparent_1px),linear-gradient(90deg,#111_1px,transparent_1px)] [background-size:48px_48px]"
       />
       <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 py-20 text-center sm:px-6 md:py-28 lg:px-8 lg:py-36">
-        <div className="mb-8 flex flex-wrap items-center justify-center gap-3">
+        {/* Status badges */}
+        <m.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, ease: "easeOut" }}
+          className="mb-8 flex flex-wrap items-center justify-center gap-3"
+        >
           <p className="inline-flex items-center gap-3 border-2 border-ink bg-beige px-3 py-1.5 font-mono text-xs font-medium uppercase tracking-widest shadow-brutal-sm">
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-pulse-dot rounded-full bg-orange" />
@@ -39,15 +48,35 @@ export function Hero() {
           <p className="inline-flex items-center gap-2 border-2 border-ink bg-sand px-3 py-1.5 font-mono text-xs font-medium uppercase tracking-wider shadow-brutal-sm">
             <MapPin size={13} aria-hidden="true" /> {profile.location}
           </p>
-        </div>
+        </m.div>
 
-        <h1 className="font-display text-[2.75rem] leading-[0.98] font-bold tracking-[-0.03em] sm:text-6xl md:text-7xl lg:text-8xl">
+        {/* Oversized Headline */}
+        <m.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
+          className="font-display text-[2.75rem] leading-[0.98] font-bold tracking-[-0.03em] sm:text-6xl md:text-7xl lg:text-8xl"
+        >
           <Highlighted text={hero.headline} />
-        </h1>
+        </m.h1>
 
-        <p className="mt-8 max-w-3xl text-lg text-ink/80 md:text-2xl">{hero.subheadline}</p>
+        {/* Subheadline */}
+        <m.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: "easeOut", delay: 0.2 }}
+          className="mt-8 max-w-3xl text-lg text-ink/80 md:text-2xl"
+        >
+          {hero.subheadline}
+        </m.p>
 
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        {/* CTAs */}
+        <m.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: "easeOut", delay: 0.3 }}
+          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+        >
           <a href="#projects" className="brutal-btn btn-crimson text-base">
             View Projects <ArrowDownRight size={18} aria-hidden="true" />
           </a>
@@ -59,7 +88,7 @@ export function Hero() {
           >
             Download Resume <Download size={18} aria-hidden="true" />
           </a>
-        </div>
+        </m.div>
       </div>
     </section>
   );
@@ -73,17 +102,29 @@ export function About() {
 
         <div className="grid gap-6 md:grid-cols-6">
           {/* Bio */}
-          <article className="brutal-card p-6 md:col-span-4 md:p-8">
+          <m.article
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+            className="brutal-card p-6 md:col-span-4 md:p-8"
+          >
             <h3 className="mb-5 text-2xl uppercase md:text-3xl">HI, I'm {profile.name.split(" ")[0]} </h3>
             <div className="space-y-4 text-ink/90">
               {about.bio.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
-          </article>
+          </m.article>
 
           {/* Quick facts */}
-          <aside className="flex flex-col justify-between gap-6 border-2 border-ink bg-ink p-6 text-beige shadow-brutal-espresso md:col-span-2 md:p-8">
+          <m.aside
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ type: "spring", stiffness: 380, damping: 30, delay: 0.1 }}
+            className="flex flex-col justify-between gap-6 border-2 border-ink bg-ink p-6 text-beige shadow-brutal-espresso md:col-span-2 md:p-8"
+          >
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-orange">Quick Facts</p>
             <dl className="space-y-5">
               {about.quickFacts.map((fact) => (
@@ -95,10 +136,16 @@ export function About() {
                 </div>
               ))}
             </dl>
-          </aside>
+          </m.aside>
 
           {/* Tech Arsenal */}
-          <article className="brutal-card bg-beige p-6 md:col-span-3 md:p-8">
+          <m.article
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ type: "spring", stiffness: 380, damping: 30, delay: 0.15 }}
+            className="brutal-card bg-beige p-6 md:col-span-3 md:p-8"
+          >
             <h3 className="mb-6 text-2xl uppercase">Tech Arsenal</h3>
             <div className="space-y-5">
               {about.skills.map((group) => (
@@ -110,7 +157,7 @@ export function About() {
                     {group.items.map((item) => (
                       <li
                         key={item}
-                        className="rounded-full border-2 border-orange bg-beige px-3 py-1 text-sm font-medium transition-colors duration-150 hover:bg-orange"
+                        className="rounded-full border-2 border-orange bg-beige px-3 py-1 text-sm font-medium transition-all duration-150 hover:bg-orange hover:scale-105"
                       >
                         {item}
                       </li>
@@ -119,10 +166,16 @@ export function About() {
                 </div>
               ))}
             </div>
-          </article>
+          </m.article>
 
           {/* Beyond the Code */}
-          <article className="brutal-card p-6 md:col-span-3 md:p-8">
+          <m.article
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ type: "spring", stiffness: 380, damping: 30, delay: 0.2 }}
+            className="brutal-card p-6 md:col-span-3 md:p-8"
+          >
             <h3 className="mb-3 text-2xl uppercase">Beyond The Code</h3>
             <p className="mb-6 text-ink/80">{about.beyondTheCode.intro}</p>
             <ul className="grid gap-3 sm:grid-cols-2">
@@ -131,7 +184,7 @@ export function About() {
                 return (
                   <li
                     key={item.label}
-                    className="flex items-center gap-3 border-2 border-ink bg-beige p-3 shadow-brutal-sm transition-transform duration-150 hover:-translate-y-0.5"
+                    className="flex items-center gap-3 border-2 border-ink bg-beige p-3 shadow-brutal-sm transition-transform duration-150 hover:-translate-y-1 hover:shadow-brutal"
                   >
                     {item.emoji && (
                       <span className="text-2xl" aria-hidden="true">
@@ -143,7 +196,7 @@ export function About() {
                 );
               })}
             </ul>
-          </article>
+          </m.article>
         </div>
       </div>
     </section>

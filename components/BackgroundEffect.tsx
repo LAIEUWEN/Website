@@ -35,17 +35,19 @@ export function BackgroundEffect() {
         }}
       />
 
-      {/* 3. Ambient Industrial Warm Glows (Corner & Edge depth) */}
+      {/* 3. Ambient Industrial Warm Glows (Corner & Edge depth with gentle breathing pulse) */}
       <div
-        className="absolute -top-32 -right-32 h-96 w-96 rounded-full opacity-25 blur-[100px] dark:opacity-15"
+        className="absolute -top-32 -right-32 h-96 w-96 rounded-full opacity-25 blur-[100px] transition-all duration-1000 dark:opacity-15 animate-pulse"
         style={{
           background: "radial-gradient(circle, var(--color-crimson) 0%, transparent 70%)",
+          animationDuration: "6s",
         }}
       />
       <div
-        className="absolute top-1/2 -left-40 h-[30rem] w-[30rem] -translate-y-1/2 rounded-full opacity-20 blur-[120px] dark:opacity-10"
+        className="absolute top-1/2 -left-40 h-[30rem] w-[30rem] -translate-y-1/2 rounded-full opacity-20 blur-[120px] transition-all duration-1000 dark:opacity-10 animate-pulse"
         style={{
           background: "radial-gradient(circle, var(--color-orange) 0%, transparent 70%)",
+          animationDuration: "8s",
         }}
       />
 
