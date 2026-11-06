@@ -47,7 +47,7 @@ function Timeline({
                 {item.location ? ` · ${item.location}` : ""}
               </p>
               <h4 className="mt-2 text-xl">{item.title}</h4>
-              <p className="font-display font-medium text-espresso">{item.org}</p>
+              <p className="font-display font-medium text-espresso dark:text-orange">{item.org}</p>
               <ul className="mt-3 space-y-1.5 text-[0.95rem] text-ink/85">
                 {item.bullets.map((b) => (
                   <li key={b} className="flex gap-2">
