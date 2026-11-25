@@ -122,10 +122,47 @@ export const projectCategories: ("All" | ProjectCategory)[] = [
   "All",
   "AI & Computer Vision",
   "Full-Stack / Mobile",
-  "Systems",
 ];
 
-export const projects: Project[] = [];
+export const projects: Project[] = [
+  {
+    title: "POMI — Pantry Operations & Macro Intelligence",
+    description:
+      "Full stack kitchen inventory tracker, AI macro calculator, and meal prep planner built to cut food waste and eliminate manual nutrition logging. Powered by Next.js App Router, Gemini 2.5-Flash structured JSON outputs with Zod validation & deterministic USDA fallback, and dual mode Supabase PostgreSQL + local JSON persistence.",
+    category: "Full-Stack / Mobile",
+    categories: ["Full-Stack / Mobile", "AI & Computer Vision"],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Gemini 2.5-Flash",
+      "Zod",
+      "Supabase PostgreSQL",
+      "Tailwind CSS",
+    ],
+    highlights: [
+      "Countertop Photo Scan & natural language grocery entry normalized into grams across Fridge, Freezer & Pantry with colour coded expiry urgency.",
+      "AI recipe macro calculation (calories, protein, carbs, fat, fiber, sugar, sodium) with multi-serving meal prep & 1 click atomic PostgreSQL stock deduction.",
+      "Daily diet & hydration tracker with customizable home KPI widgets and a built-in REST payload / SQL query inspector.",
+    ],
+    videos: [
+      {
+        title: "01 · Photo Scan & Pantry",
+        caption: "Countertop grocery photo scan, natural language input & expiry urgency sorting.",
+        src: "/projects/pomi/01-photo-scan-and-pantry.mp4",
+      },
+      {
+        title: "02 · Recipes & Meal Prep",
+        caption: "AI macro calculation, meal-prep batching & 1 click atomic inventory deduction.",
+        src: "/projects/pomi/02-recipes-and-meal-prep.mp4",
+      },
+      {
+        title: "03 · Diet Tracker & Modules",
+        caption: "Daily macro & water logging paired with customizable dashboard widgets.",
+        src: "/projects/pomi/03-diet-tracker-and-modules.mp4",
+      },
+    ],
+  },
+];
 
 // Saved projects (uncomment and customize when ready):
 /*
@@ -166,7 +203,8 @@ export const initialProjects: Project[] = [
     title: "SignSpeak",
     description:
       "Translates sign-language fingerspelling into text in the browser to make video calls more accessible. Uses MediaPipe hand landmarks and a lightweight classifier running fully on-device with TensorFlow.js.",
-    category: "AI & Computer Vision",
+    category: "Full-Stack / Mobile",
+    categories: ["Full-Stack / Mobile", "AI & Computer Vision"],
     tech: ["TensorFlow.js", "MediaPipe", "TypeScript"],
     image: "/projects/placeholder-4.svg",
     imageAlt: "SignSpeak web app recognising a hand gesture via webcam",
