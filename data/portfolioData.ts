@@ -2,17 +2,29 @@
 // Types
 // ---------------------------------------------------------------------------
 
-export type ProjectCategory = "AI & Computer Vision" | "Full-Stack / Mobile" | "Systems";
+export type ProjectCategory = "AI & Computer Vision" | "Full-Stack / Mobile";
+
+export interface ProjectVideo {
+  title: string;
+  caption: string;
+  src: string;
+}
 
 export interface Project {
   title: string;
   /** 2 sentences: the problem solved + the architecture. */
   description: string;
   category: ProjectCategory;
+  /** Optional additional categories when a project spans multiple tracks. */
+  categories?: ProjectCategory[];
   tech: string[];
   /** Path inside /public (e.g. "/projects/my-app.png") or a remote URL. GIFs work too. */
-  image: string;
-  imageAlt: string;
+  image?: string;
+  imageAlt?: string;
+  /** Optional interactive video demos (e.g. mobile walkthrough clips). */
+  videos?: ProjectVideo[];
+  /** Optional feature highlights rendered in featured layout. */
+  highlights?: string[];
   liveUrl?: string;
   repoUrl?: string;
 }
@@ -48,7 +60,7 @@ export const profile = {
   /** Used for the live GitHub section. Can be overridden by the GITHUB_USERNAME env var. */
   githubUsername: "LAIEUWEN", 
   siteUrl: "https://your-domain.vercel.app", 
-  resumeUrl: "/RESUME1.pdf", // Replace /public/resume.pdf with your real resume
+  resumeUrl: "/LaiEuWen_Resume.pdf", // Updated resume PDF in /public
   /** Optional avatar in /public. Set to null to show the monogram instead. */
   avatar: null as string | null, // e.g. "/avatar.jpg"
   status: "Available for opportunities",
