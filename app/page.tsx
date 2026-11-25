@@ -57,7 +57,7 @@ export default function HomePage() {
             swayDuration={4.4}
             swayDelay={-1.2}
             lightRadius={1.15}
-            className="hidden lg:flex absolute top-0 left-2 xl:left-8 z-20"
+            className="flex origin-top-left scale-[0.42] sm:scale-[0.68] lg:scale-100 absolute top-0 left-1 sm:left-2 xl:left-8 z-20"
           />
           <LanternCanvas
             style="tall"
@@ -69,7 +69,7 @@ export default function HomePage() {
             swayDuration={5.5}
             swayDelay={-2.7}
             lightRadius={1.1}
-            className="hidden lg:flex absolute top-0 right-2 xl:right-8 z-20"
+            className="flex origin-top-right scale-[0.4] sm:scale-[0.65] lg:scale-100 absolute top-0 right-1 sm:right-2 xl:right-8 z-20"
           />
           {/* High-perched accent lantern on far right */}
           <LanternCanvas
@@ -83,7 +83,7 @@ export default function HomePage() {
             swayDelay={-0.5}
             className="hidden 2xl:flex absolute top-0 right-32 z-20"
           />
-          <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 pt-28 pb-20 sm:px-6 md:py-28 lg:px-8">
             <SectionHeader
               index="02"
               eyebrow="Selected Work"
@@ -122,7 +122,7 @@ export default function HomePage() {
             swayDuration={4.4}
             swayDelay={-1.5}
             lightRadius={1.1}
-            className="hidden lg:flex absolute top-0 left-2 xl:left-10 z-20"
+            className="flex origin-top-left scale-[0.42] sm:scale-[0.68] lg:scale-100 absolute top-0 left-1 sm:left-2 xl:left-10 z-20"
           />
           <LanternCanvas
             style="globe"
@@ -133,9 +133,9 @@ export default function HomePage() {
             swayDuration={5.2}
             swayDelay={-0.6}
             lightRadius={1.0}
-            className="hidden lg:flex absolute top-0 right-2 xl:right-10 z-20"
+            className="flex origin-top-right scale-[0.42] sm:scale-[0.68] lg:scale-100 absolute top-0 right-1 sm:right-2 xl:right-10 z-20"
           />
-          <div className="mx-auto max-w-4xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
+          <div className="mx-auto max-w-4xl px-4 pt-28 pb-20 sm:px-6 md:py-28 lg:px-8">
             <SectionHeader index="05" eyebrow="FAQ" title="Questions, Answered" />
             <FaqAccordion />
           </div>

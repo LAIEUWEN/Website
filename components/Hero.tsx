@@ -77,7 +77,7 @@ export function Hero() {
         swayDelay={0}
         glowTone="golden"
         lightRadius={1.2}
-        className="hidden md:flex absolute top-0 left-2 md:left-4 lg:left-7 xl:left-12 z-20"
+        className="flex origin-top-left scale-[0.42] sm:scale-[0.72] md:scale-100 absolute top-0 left-1 sm:left-2 md:left-4 lg:left-7 xl:left-12 z-20"
       />
       {/* Left Margin - Secondary: High-perched Pagoda Red lantern (Crimson Glow) */}
       <LanternCanvas
@@ -90,7 +90,7 @@ export function Hero() {
         swayDelay={-1.7}
         glowTone="crimson"
         lightRadius={0.95}
-        className="hidden lg:flex absolute top-0 left-20 xl:left-28 z-20"
+        className="flex origin-top-left scale-[0.45] sm:scale-[0.72] lg:scale-100 absolute top-0 left-12 sm:left-16 lg:left-20 xl:left-28 z-20"
       />
 
       {/* Right Margin - Primary: Mid-drop Pagoda Red lantern (Crimson Glow) */}
@@ -104,7 +104,7 @@ export function Hero() {
         swayDelay={-2.2}
         glowTone="crimson"
         lightRadius={1.1}
-        className="hidden md:flex absolute top-0 right-2 md:right-4 lg:right-7 xl:left-auto xl:right-12 z-20"
+        className="flex origin-top-right scale-[0.46] sm:scale-[0.75] md:scale-100 absolute top-0 right-1 sm:right-2 md:right-4 lg:right-7 xl:left-auto xl:right-12 z-20"
       />
       {/* Right Margin - Secondary: Slender Gothic Iron lantern dropped lower (Golden Glow) */}
       <LanternCanvas
@@ -119,7 +119,7 @@ export function Hero() {
         lightRadius={1.0}
         className="hidden xl:flex absolute top-0 right-28 z-20"
       />
-      <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 py-20 text-center sm:px-6 md:py-28 lg:px-8 lg:py-36">
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 pt-28 pb-20 text-center sm:px-6 sm:py-24 md:py-28 lg:px-8 lg:py-36">
         {/* Status badges */}
         <m.div
           initial={{ opacity: 0, y: 16 }}

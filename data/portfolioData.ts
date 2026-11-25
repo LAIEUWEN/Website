@@ -194,7 +194,7 @@ export const resume = {
     {
       title: "Software Engineering Intern",
       org: "Vision Mission Cleaning", 
-      period: "Jun 2025 — Sep 2025",
+      period: "April 2025 — August 2025",
       location: "Kuala Lumpur, MY", 
       bullets: [
         "Shipped a contract management system.",
@@ -221,7 +221,7 @@ export const resume = {
       title: "B.Sc. Computer Science",
       org: "Sunway University", 
       period: "2025 — ongoing",
-      bullets: ["CGPA 3.61 "],
+      bullets: ["CGPA 3.74 "],
     },
   ] satisfies TimelineItem[],
 };
